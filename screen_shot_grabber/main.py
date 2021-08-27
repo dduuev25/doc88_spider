@@ -18,6 +18,7 @@ while retry_times <= 3:
     driver.refresh()
     time.sleep(4)
     try:
+        # 顺序保存图片
         doc_to_do.view_check(driver)
         time.sleep(3)
         doc_to_do.save_img(driver, screen_path, page_num)
@@ -30,5 +31,5 @@ while retry_times <= 3:
         doc_to_do.close_driver(driver)
         retry_times +=1
         continue
-    # 顺序保存图片
+
 
