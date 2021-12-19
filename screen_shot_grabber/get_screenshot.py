@@ -59,30 +59,30 @@ class Doc88Book:
 
 
 
-# if __name__ == "__main__":
-#     doc_url = 'https://www.doc88.com/p-10359441830592.html'
-#     page_num = 568
-#     screen_path = 'D:\\screenshots\\django project'
-#
-#     doc_to_do = Doc88Book()
-#     retry_times = 0
-#
-#     while retry_times <= 3:
-#         driver = doc_to_do.set_up(doc_url, 10)
-#         driver.maximize_window()
-#         time.sleep(2)
-#         driver.refresh()
-#         time.sleep(4)
-#         try:
-#             doc_to_do.view_check(driver)
-#             break
-#         except Exception as ee:
-#             print(ee)
-#             print(f'幻灯片按钮不存在，重试,已重试次数{retry_times}')
-#             driver.close()
-#             retry_times +=1
-#             continue
-#     # 顺序保存图片
-#     time.sleep(3)
-#     doc_to_do.save_img(driver,screen_path,page_num)
-#     doc_to_do.tear_down(driver)
+if __name__ == "__main__":
+    doc_url = 'https://www.doc88.com/p-7018457131300.html'
+    page_num = 767
+    screen_path = 'D:\\screenshots\\fluent_python_f'
+
+    doc_to_do = Doc88Book()
+    retry_times = 0
+
+    while retry_times <= 3:
+        driver = doc_to_do.set_up(doc_url, 10)
+        driver.maximize_window()
+        time.sleep(2)
+        driver.refresh()
+        time.sleep(3)
+        try:
+            doc_to_do.view_check(driver)
+            break
+        except Exception as ee:
+            print(ee)
+            print(f'幻灯片按钮不存在，重试,已重试次数{retry_times}')
+            driver.close()
+            retry_times +=1
+            continue
+    # 顺序保存图片
+    time.sleep(3)
+    doc_to_do.save_img(driver,screen_path,page_num)
+    doc_to_do.tear_down(driver)
